@@ -9,38 +9,42 @@ Author URI: http://grantagold.com
 
 * {margin:0; padding:0;}
 
+:root {
+  --light: #f1ebe1;
+  --dark: #818871;
+}
+
 html, html a {
   -webkit-font-smoothing: antialiased !important;
 }
 
-body{
+body {
   font-family: 'Space Mono', monospace;
   font-size: 1em;
   line-height: 1.1em;
-  color: #f3ede6;
-  background-color: #818871;
   max-width: 100vw;
   max-height: 100vh;
   padding: 1.6em;
   overflow: hidden;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
+  animation-name: pulse2;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
-a{
-  color: #f3ede6;
+a, a:hover, a:visited, .title {
+  color: var(--light);
   text-decoration: none;
+  animation: pulse1 30s infinite;
 }
 b {
   font-weight: 900;
 }
 
 a:hover{
-  color: #f3ede6;
   text-decoration: underline;
-}
-a:visited {
-  color: #f3ede6;
 }
 
 h1 {
@@ -63,15 +67,18 @@ Containers, Layout, and Sections
 }
 
 #logo {
-  background-color: #818871;
-  text-align: center;
-  vertical-align: center;
   z-index: 99;
+  padding-top: 5em;
   overflow: hidden;
 }
 
 #logo .spin {
   margin: 1em;
+}
+
+.color {
+  fill: var(--light);
+  animation: pulse1 30s infinite;
 }
 
 footer {
@@ -80,7 +87,8 @@ footer {
   justify-content: space-between;
   position: fixed;
   margin-bottom: 1.6em;
-  color: #f3ede6;
+  color: var(--light);
+  animation: pulse1 30s infinite;
   background-color: rgba(0,0,0,0);
   vertical-align: bottom;
   width: 100%;
@@ -94,12 +102,25 @@ Animation
 
 */
 
-.fadein {
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+
+@keyframes pulse1 {
+  0%, 100% {
+    color: var(--light);
+    fill: var(--light);
+  }
+  50% {
+    color: var(--dark);
+    fill: var(--dark);
+  }
+}
+
+@keyframes pulse2 {
+  0%, 100% {
+    background: var(--dark);
+  }
+  50% {
+    background: var(--light);
+  }
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -180,6 +201,9 @@ Media Queries
 @media (min-width: 1000px) {
   body {
     font-size: 1.4em;
+  }
+  #logo {
+    padding-top: 0;
   }
   #logo .spin {
     margin: 5em;
