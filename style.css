@@ -32,12 +32,22 @@ body {
   animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
+
+  -webkit-animation: pulse2 30s alternate-reverse infinite;
+  -moz-animation: pulse2 30s alternate-reverse infinite;
+  -ms-animation: pulse2 30s alternate-reverse infinite;
+  -o-animation: pulse2 30s alternate-reverse infinite;
 }
 
 a, a:hover, a:visited, .title {
   color: var(--light);
   text-decoration: none;
   animation: pulse1 30s infinite;
+
+  -webkit-animation: pulse1 30s infinite;
+  -moz-animation: pulse1 30s infinite;
+  -ms-animation: pulse1 30s infinite;
+  -o-animation: pulse1 30s infinite;
 }
 b {
   font-weight: 900;
@@ -79,6 +89,10 @@ Containers, Layout, and Sections
 .color {
   fill: var(--light);
   animation: pulse1 30s infinite;
+  -webkit-animation: pulse1 30s infinite;
+  -moz-animation: pulse1 30s infinite;
+  -ms-animation: pulse1 30s infinite;
+  -o-animation: pulse1 30s infinite;
 }
 
 footer {
@@ -89,6 +103,10 @@ footer {
   margin-bottom: 1.6em;
   color: var(--light);
   animation: pulse1 30s infinite;
+  -webkit-animation: pulse1 30s infinite;
+  -moz-animation: pulse1 30s infinite;
+  -ms-animation: pulse1 30s infinite;
+  -o-animation: pulse1 30s infinite;
   background-color: rgba(0,0,0,0);
   vertical-align: bottom;
   width: 100%;
